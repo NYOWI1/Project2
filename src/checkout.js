@@ -8,5 +8,5 @@ export function calculateOrder({ quantity, unitPrice, stock }) {
   if (quantity > stock) {
     throw new Error('insufficient stock');
   }
-  return { quantity, total: unitPrice, remainingStock: stock - quantity };
+  return { quantity, total: quantity * unitPrice, remainingStock: stock - quantity };
 }
