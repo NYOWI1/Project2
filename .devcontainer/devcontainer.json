@@ -1,0 +1,10 @@
+{
+  "name": "Checkout demo",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22-bookworm",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": { "label": "Checkout demo" }
+  },
+  "postCreateCommand": "npm test && npm run build",
+  "postStartCommand": "npm start > /tmp/checkout-demo.log 2>&1 &"
+}
