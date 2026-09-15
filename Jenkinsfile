@@ -1,7 +1,10 @@
 pipeline {
   agent { label 'node-docker' }
   options { disableConcurrentBuilds() }
-  environment { RELEASE_TAG = "${env.BUILD_NUMBER}" }
+  environment {
+    RELEASE_TAG = "${env.BUILD_NUMBER}"
+    PATH = '/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+  }
   stages {
     stage('Checkout') {
       steps { checkout scm }
